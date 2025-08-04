@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0f1c17;
+    --foreground: #f5f4f0;
+    --card: #0f1c17;
+    --card-foreground: #f5f4f0;
+    --popover: #0f1c17;
+    --popover-foreground: #f5f4f0;
+    --primary: #a67c38;
+    --primary-foreground: #0f1c17;
+    --secondary: #2b2b2b;
+    --secondary-foreground: #f5f4f0;
+    --muted: #2b2b2b;
+    --muted-foreground: #f5f4f0;
+    --accent: #a67c38;
+    --accent-foreground: #0f1c17;
+    --destructive: #dc2626;
+    --destructive-foreground: #f5f4f0;
+    --border: rgba(245, 244, 240, 0.1);
+    --input: rgba(245, 244, 240, 0.1);
+    --ring: #a67c38;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+  .font-serif {
+    font-family: "Crimson Text", serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f1c17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a67c38;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8864a;
+}
+
+/* Smooth animations */
+* {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #0f1c17 0%, #1a2f23 100%);
+}
+
+/* Subtle texture overlay */
+.texture-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(245, 244, 240, 0.02) 1px, transparent 0);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
